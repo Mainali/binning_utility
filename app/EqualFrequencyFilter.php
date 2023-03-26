@@ -3,7 +3,7 @@
 namespace App;
 
 /**
- * This class implements equal width filter algorithm
+ * This class implements equal frequency filter algorithm
  */
 class EqualFrequencyFilter extends AbstractBaseDiscreteFilter implements FilterInterface
 {
@@ -13,7 +13,7 @@ class EqualFrequencyFilter extends AbstractBaseDiscreteFilter implements FilterI
         parent::__construct($input);
     }
 
-    function filter()
+    function filter(): void
     {
         try {
             $filteredArray = array_chunk($this->inputArray, ceil(count($this->inputArray)/3.0));
