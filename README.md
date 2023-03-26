@@ -3,6 +3,14 @@
 ------
 
 <b>Binning Utility (uses laravel zero framework)</b>
+The engine contains a discretization filter into which a
+set of continuous variables (long or float) is input. The output is a lumping of items into 3 discrete
+categories or "bins": High, Medium, Low.
+For example, if I pass in a set of longs through the filter the output might look something like:
+        
+        High: 99, 87, 65
+        Medium: 35, 60, 24, 43, 50, 55
+        Low: 5, 9, 3, 13
 
 Steps for running:
 

@@ -2,6 +2,9 @@
 
 namespace App;
 
+/**
+ * Base abstract class for the filter contains common attributes and functions
+ */
 abstract class AbstractBaseDiscreteFilter implements FilterInterface
 {
     function __construct($input)
@@ -26,6 +29,10 @@ abstract class AbstractBaseDiscreteFilter implements FilterInterface
         sort($this->inputArray);
     }
 
+    /**
+     * converts the filtered values into formatted string
+     * @return string
+     */
     public function getFilteredValuesAsString(): string
     {
         return "High: ".implode(',',$this->HighValues).
