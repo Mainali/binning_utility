@@ -27,3 +27,24 @@ Unit tests are located inside tests folder. Uses PHPUnit.
 eg.
  `./vendor/bin/phpunit ./tests/EqualWidthFilterTest.php`
 
+
+
+------------------------------------------
+To create a docker image:
+
+` docker build -t binning_utility .`
+
+To run the image:
+
+` docker run -dt binning_utility`
+
+To execute command:
+
+` docker exec <container_id> php binning filter <ef|ew> <comma separated values>`
+
+eg.
+    
+    docker exec 1ebba6c3737b php binning filter ew 0.1,3.4,3.5,3.6,7.0,9.0,6.0,4.4,2.5,3.9,4.5,2.8
+    High: 7,9
+    Medium: 3.4,3.5,3.6,3.9,4.4,4.5,6
+    Low: 0.1,2.5,2.8
