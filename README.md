@@ -22,6 +22,11 @@ eg:
     Low: 0.1,2.5,2.8
 
 
+    php binning filter ef 0.1,3.4,3.5,3.6,7.0,9.0,6.0,4.4,2.5,3.9,4.5,2.8
+    High: 4.5,6,7,9
+    Medium: 3.5,3.6,3.9,4.4
+    Low: 0.1,2.5,2.8,3.4
+
 Unit tests are located inside tests folder. Uses PHPUnit.
 
 eg.
