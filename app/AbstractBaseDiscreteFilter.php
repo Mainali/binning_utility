@@ -10,9 +10,9 @@ abstract class AbstractBaseDiscreteFilter implements FilterInterface
 
     }
 
-    public array $HighValues;
-    public array $MediumValues;
-    public array $LowValues;
+    public array $HighValues = array();
+    public array $MediumValues = array();
+    public array $LowValues = array();
 
     public array $inputArray;
 
