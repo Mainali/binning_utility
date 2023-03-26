@@ -2,6 +2,8 @@
 
 namespace App\Commands;
 
+use App\EqualFrequencyFilter;
+use App\EqualWidthFilter;
 use Illuminate\Console\Scheduling\Schedule;
 use LaravelZero\Framework\Commands\Command;
 
@@ -28,7 +30,17 @@ class FilterCommand extends Command
      */
     public function handle()
     {
-        //
+        $input = $this->argument('value');
+        $val = match ($this->argument(key: 'filter')) {
+            'ef' => new EqualFrequencyFilter($input),
+            'ew' => new EqualWidthFilter($input),
+            default => null
+        };
+
+        if(!is_null($val)){
+            $val->filter();
+            echo $val->getFilteredValuesAsString();
+        }
     }
 
     /**
