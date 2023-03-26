@@ -15,7 +15,15 @@ class EqualFrequencyFilter extends AbstractBaseDiscreteFilter implements FilterI
 
     function filter()
     {
-        // TODO: Implement filter() method.
+        try {
+            $filteredArray = array_chunk($this->inputArray, ceil(count($this->inputArray)/3.0));
+            $this->LowValues = $filteredArray[0];
+            $this->MediumValues = $filteredArray[1];
+            $this->HighValues = $filteredArray[2];
+        }catch (\Exception $e){
+            echo $e->getMessage();
+        }
+
     }
 
 }
